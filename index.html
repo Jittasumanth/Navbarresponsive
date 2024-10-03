@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Landing Page</title>
+    <style>
+       
+        body {
+            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+          
+        }
+
+       
+        .navbar {
+            background-color: #FFD700;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul a:hover{
+            color:rgb(250, 38, 6);
+            cursor: pointer;
+  
+ }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #8B0000;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('bakery.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+    
+        .content {
+            border: 1px solid rgb(244, 239, 239);
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(105, 105, 149);
+         
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            color: white;
+            margin-top: 90px;;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+       
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+          
+        }
+        .image{
+            width:200px;
+            height:200px;
+        }
+
+      
+       
+  
+    #food-items {
+        padding: 50px;
+        background-color:rgb(163, 212, 163);
+        border:1px solid rgb(229, 225, 225);
+       
+        
+    }
+    #food-items h2{
+       text-align: center;
+        font-size: 30px;
+        margin-top: 45px;
+    }
+
+  
+
+    #food-items img {
+       
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+        border-radius: 20px; 
+    }
+    .image{
+        
+        display:flex;
+        gap:50px;
+       
+    
+        
+    }
+    /* content 1*/
+    .content1 {
+    background-color: #FDEBD0; 
+    padding: 50px 20px; 
+    text-align: center; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   margin-top: 20px;;
+    max-width: 100%;
+    border: 1px solid #f7b731; 
+}
+
+.content1 h2 {
+    margin: 50px;;
+    font-size: 2.5em; 
+    color: #D35400; 
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; 
+}
+
+.content1 p {
+    font-size: 1.2em; 
+    line-height: 1.8;
+    color: #2C3E50; 
+    margin-bottom: 0; 
+    font-family: 'Arial', sans-serif;
+}
+
+.content1 p:last-child {
+    margin-bottom: 20px; 
+}
+
+   
+ 
+    .login-section {
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #FFD700;
+        border: none;
+        color: #333;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+        background-color: #FFC107;
+    }
+
+    .login-container p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .login-container a {
+        color: #8B0000;
+        text-decoration: none;
+    }
+
+    .login-container a:hover {
+        text-decoration: underline;
+    }
+
+ /* media queries */
+ @media  screen and (max-width:426px) {
+   
+    .navbar {
+    background-color: #FFD700;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    top: 0;
+    z-index: 1000;
+    flex-direction: column;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.hero {
+    height: 40vh;
+    background: url('bakery.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+}
+.hero h1 {
+    font-size: 2em;
+    margin: 0;
+}
+.hero p {
+    font-size: 16px;
+}
+.content h2 {
+    font-size: 1.5em;
+    color: white;
+    margin-top: 90px;
+}
+
+.content p {
+    font-size: 0.8em;
+    line-height: 1.6;
+}
+#food-items h2 {
+    text-align: center;
+    font-size: 30px;
+   
+}
+#food-items {
+    height: 170vh;
+    background-color: rgb(163, 212, 163);
+    border: 1px solid rgb(229, 225, 225);
+}
+.image {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    margin-left: 40px;
+    height:140px;
+    width:140px;
+}
+
+ }
+
+@media screen and (min-width:656px) and (max-width:769px) {
+
+    #food-items {
+    height:90vh;
+    padding: 40px;
+    background-color: rgb(163, 212, 163);
+    border: 1px solid rgb(229, 225, 225);
+}
+.image {margin-left: 30px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:550px;
+    height:200px;
+}
+
+ }
+
+ @media screen and (min-width:1440px) {
+    .navbar {
+    background-color: #FFD700;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 1480.5px;
+    top: 0;
+    z-index: 1000;
+}
+.hero {
+    height: 100vh;
+    background: url('bakery.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 1500px;
+ 
+}
+.content {
+    border: 1px solid rgb(244, 239, 239);
+    padding: 10px;
+  
+    text-align: center;
+    background-color: rgb(105, 105, 149);
+    width: 1480px;
+}
+#food-items {
+    padding: 10px;
+    background-color: rgb(163, 212, 163);
+    border: 1px solid rgb(229, 225, 225);
+    width: 1480px;
+    padding-bottom: 50px;
+}
+#food-items h2{
+    margin-top: 100px;
+}
+
+.content1 {
+  
+    background-color: #FDEBD0;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 16px;
+    width: 1495px;
+    border: 1px solid #f7b731;
+   
+}
+
+
+.login-container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 1450px;
+}
+    
+    
+ }
+ 
+
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Bakery Delights</h1>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#food-items">Food Items</a></li>
+            <li><a href='#content'>Content</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+    </nav>
+
+        <section class="hero" id="home">
+            <div>
+                <h1>Freshly Baked Goods Every Day</h1>
+                <p>Your favorite bakery treats, just a click away.</p>
+            </div>
+        </section>
+
+        <section id="about" class="content">
+            <h2>About Bakery Delights</h2>
+            <p>Founded in 2010, Bakery Delights is a family-owned bakery dedicated to crafting the freshest, most delicious baked goods in town. With a passion for quality and a commitment to using the finest ingredients, we bake everything from scratch, daily.</p>
+            <p>Our team of skilled bakers and pastry chefs blend traditional techniques with innovative flavors to bring you an unforgettable experience. Whether you're craving a buttery croissant, a decadent cake, or artisanal bread, we have something to satisfy every taste bud.</p>
+            <p>At Bakery Delights, our mission is to create more than just baked goods; we strive to create moments of joy and connection with every bite. We welcome you to visit us and experience the warmth and aroma of fresh baking, right in the heart of the community.</p>
+        </section>
+        
+        <section id="food-items">
+            <h2>Food-Items</h2>
+        <div class="image">
+      
+            <img src="cake2.jpg" alt="">
+            <img src="cake3.jpg" alt="">
+            <img src="eggpuff.jpg" alt="">
+            <img src="chickenpuff.jpg" alt="">
+            <img src="vegpuff.jpg" alt="">
+            <img src="pastries.jpg" alt="">
+        </div>
+
+    </section>
+    <section class="content1" id="content">
+        <h2>Welcome to Our Bakery</h2>
+        <p>At Bakery Delights, we bake fresh, delicious treats daily. From savory breads to sweet pastries, we have everything to satisfy your cravings. Whether you're looking for a morning bite or a special dessert, our bakery is your one-stop destination.</p>
+    </section>
+
+    <section id="login" class="login-section">
+        <div class="login-container">
+            <h2>Login to Your Account</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#signup">Sign up</a></p>
+        </div>
+    </section>
+    
+
+ 
+    <footer>
+        <p>&copy; 2024 Bakery Delights. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
